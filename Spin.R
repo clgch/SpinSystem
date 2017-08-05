@@ -27,4 +27,6 @@ df = data.frame(Step,totalSpin)
 
 #using ggplot2
 
-ggplot(df, aes(x = Step, y = totalSpin, frame = time)) + geom_point()
+p <- ggplot(df, aes(x = Step, y = totalSpin, frame = Step)) + geom_line()
+
+gganimate(p)
