@@ -20,13 +20,12 @@ for(i in 2:TMAX){
 
 totalSpin = apply(Status,1,sum)
 Step = 1:TMAX
-time = 1:TMAX
 
 #Convert into a dataframe
 df = data.frame(Step,totalSpin)
 
 #using ggplot2
 
-p <- ggplot(df, aes(x = Step, y = totalSpin, frame = Step)) + geom_line()
+p <- ggplot(df, aes(x = Step, y = totalSpin, frame = Step)) + geom_point()
 
 gganimate(p)
